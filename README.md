@@ -381,7 +381,7 @@
 
 </details>
 
-### Projekt nr. 5 [ [demo](https://piecioshka.github.io/warsawjs-workshop-1-carousel/v1) ]
+### Projekt nr. 5 [ [demo](https://piecioshka.github.io/warsawjs-workshop-1-carousel/v5) ]
 
 <details>
     <summary>Treść zadania nr. 5</summary>
