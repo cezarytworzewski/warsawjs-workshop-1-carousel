@@ -41,36 +41,44 @@ class TestCarousel {
     $wrapper.style.overflow = 'hidden';
   };
 
-  setupArrows() {
+  createLeftArrow() {
     const $leftArrow = document.createElement('button');
     $leftArrow.innerText = '<';
     $leftArrow.classList.add('left-arrow');
     $leftArrow.classList.add('arrow');
     this.$leftArrow = $leftArrow;
+  }
 
+  createRightArrow() {
     const $rightArrow = document.createElement('button');
     $rightArrow.innerText = '>';
     $rightArrow.classList.add('right-arrow');
     $rightArrow.classList.add('arrow');
     this.$rightArrow = $rightArrow;
+  }
+
+  setupArrows() {
+    this.createLeftArrow();
+    this.createRightArrow();
 
     const $wrapper = this.settings.$el;
-    $wrapper.appendChild($leftArrow);
-    $wrapper.appendChild($rightArrow);
+    $wrapper.appendChild(this.$leftArrow);
+    $wrapper.appendChild(this.$rightArrow);
   };
 
   createDots() {
+    const $dot = document.createElement('input');
     $dot.classList.add('dot');
     $dot.type = 'radio';
     $dot.name = this.settings.name + ' - dot';
+    return $dot;
   };
 
   setupDots() {
     const $wrapper = this.settings.$el;
 
     this.images.forEach(($img, i) => {
-      const $dot = document.createElement('input');
-      this.createDots();
+      const $dot = this.createDots();
       $wrapper.appendChild($dot);
 
       const left = parseInt(getComputedStyle($dot).left);
